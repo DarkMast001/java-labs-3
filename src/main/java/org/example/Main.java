@@ -3,8 +3,11 @@ package org.example;
 import org.example.Task1.Measurable;
 import org.example.Task10_11.DirectoryLister;
 import org.example.Task13.RunnableCombiner;
+import org.example.Task15.IntSequenceExample;
+import org.example.Task4.IntSequence;
 import org.example.Task7.LuckySort;
 import org.example.Task8.Greeter;
+import org.example.Task14.Employee;
 
 import java.io.File;
 import java.util.*;
@@ -147,6 +150,39 @@ public class Main {
                     Runnable combinedTask = RunnableCombiner.combine(new Runnable[]{task_1, task_2, task_3});
 
                     combinedTask.run();
+                    break;
+                case 14:
+                    Employee[] employees = {
+                            new Employee("Dima", 50000),
+                            new Employee("Ivan", 60000),
+                            new Employee("Nikita", 50000),
+                            new Employee("Egor", 70000)
+                    };
+
+                    Arrays.sort(employees, Comparator
+                            .comparing(Employee::getSalary)
+                            .thenComparing(Employee::getName)
+                    );
+
+                    System.out.println("Сортировка по зарплате и имени:");
+                    Arrays.stream(employees).forEach(System.out::println);
+
+                    Arrays.sort(employees, Comparator
+                            .comparing(Employee::getSalary)
+                            .thenComparing(Employee::getName)
+                            .reversed()
+                    );
+
+                    System.out.println("\nСортировка в обратном порядке:");
+                    Arrays.stream(employees).forEach(System.out::println);
+                    break;
+                case 15:
+                    IntSequence sequence = IntSequenceExample.randomInts(1, 10);
+
+                    for (int i = 0; i < 10; i++) {
+                        System.out.print(sequence.next() + " ");
+                    }
+                    System.out.println("");
                     break;
                 default:
                     System.out.println("Wrong!");
