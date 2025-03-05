@@ -1,9 +1,12 @@
 package org.example;
 
 import org.example.Task1.Measurable;
+import org.example.Task10_11.DirectoryLister;
+import org.example.Task13.RunnableCombiner;
 import org.example.Task7.LuckySort;
 import org.example.Task8.Greeter;
 
+import java.io.File;
 import java.util.*;
 
 public class Main {
@@ -97,6 +100,53 @@ public class Main {
 
                     System.out.println("\nЗапускаем задачи последовательно:");
                     runInOrder(taskOther1, taskOther2, taskOther3);
+                    break;
+                case 10:
+                    File directory = new File("../");
+                    File[] subdirectories = DirectoryLister.getSubdirectories(directory);
+                    Arrays.stream(subdirectories).forEach(System.out::println);
+                    break;
+                case 11:
+                    File directoryNew = new File("../");
+                    String extension = "pdf";
+
+                    String[] files = DirectoryLister.getFilesWithExtension(directoryNew, extension);
+                    System.out.println("Файлы с расширением ." + extension + ":");
+                    for (String file : files) {
+                        System.out.println(file);
+                    }
+                    break;
+                case 12:
+                    File[] filesArray = {
+                            new File("./testsFor12/file3.txt"),
+                            new File("./testsFor12/folder1"),
+                            new File("./testsFor12/file1.txt"),
+                            new File("./testsFor12/folder2"),
+                            new File("./testsFor12/file2.txt")
+                    };
+
+                    Arrays.sort(filesArray, (f1, f2) -> {
+                        if (f1.isDirectory() && !f2.isDirectory()) {
+                            return -1; // Каталог идет раньше файла
+                        } else if (!f1.isDirectory() && f2.isDirectory()) {
+                            return 1;  // Файл идет после каталога
+                        } else {
+                            return f1.getPath().compareTo(f2.getPath()); // Сортировка по пути
+                        }
+                    });
+
+                    for (File file : filesArray) {
+                        System.out.println(file.getPath());
+                    }
+                    break;
+                case 13:
+                    Runnable task_1 = () -> System.out.println("Задача 1 выполнена");
+                    Runnable task_2 = () -> System.out.println("Задача 2 выполнена");
+                    Runnable task_3 = () -> System.out.println("Задача 3 выполнена");
+
+                    Runnable combinedTask = RunnableCombiner.combine(new Runnable[]{task_1, task_2, task_3});
+
+                    combinedTask.run();
                     break;
                 default:
                     System.out.println("Wrong!");
