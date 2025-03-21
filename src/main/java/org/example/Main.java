@@ -1,16 +1,17 @@
 package org.example;
 
-import org.example.Task1.Measurable;
-import org.example.Task10_11.DirectoryLister;
-import org.example.Task13.RunnableCombiner;
-import org.example.Task15.IntSequenceExample;
-import org.example.Task4.IntSequence;
-import org.example.Task7.LuckySort;
-import org.example.Task8.Greeter;
-import org.example.Task14.Employee;
+import org.example.task_1.Measurable;
+import org.example.task_10_11.DirectoryLister;
+import org.example.task_13.RunnableCombiner;
+import org.example.task_15.IntSequenceExample;
+import org.example.task_4.IntSequence;
+import org.example.task_7.LuckySort;
+import org.example.task_8.Greeter;
+import org.example.task_14.Employee;
 
 import java.io.File;
 import java.util.*;
+import java.util.function.BiPredicate;
 
 public class Main {
 
