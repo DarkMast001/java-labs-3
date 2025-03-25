@@ -9,9 +9,11 @@ public class Main {
 
         // Анонимный класс. Функциональный интерфейс
 //        Operation subtraction = new Operation() {
+//            int s = 5;
+//
 //            @Override
 //            public int calculate(int a, int b) {
-//                return a- b;
+//                return a - b + s;
 //            }
 //        };
 //        System.out.println("Вычитание: " + subtraction.calculate(5, 3));
@@ -29,6 +31,8 @@ public class Main {
 
         // Анонимный класс. Нефункциональный интерфейс
 //        MultiOperation calculator = new MultiOperation() {
+//
+//
 //            @Override
 //            public int add(int a, int b) {
 //                return a + b;

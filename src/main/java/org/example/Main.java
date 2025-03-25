@@ -10,6 +10,7 @@ import org.example.task_8.Greeter;
 import org.example.task_14.Employee;
 
 import java.io.File;
+import java.lang.reflect.Array;
 import java.util.*;
 import java.util.function.BiPredicate;
 
@@ -60,6 +61,9 @@ public class Main {
 
     public static void main(String[] args) {
         // 141
+
+        // Ответ на 3 вопрос про примеры
+        // AbstractList, AbstractSet, AbstractMap
 
         Scanner in = new Scanner(System.in);
         int n = 1;
