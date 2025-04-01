@@ -16,6 +16,7 @@ public class Main {
         List<Integer> numbers = List.of(1, 2, 3, 4, 5);
 
         Iterator<Integer> iterator = numbers.iterator();
+        iterator.forEachRemaining(System.out::println);
 
         processElements(iterator, value -> System.out.println("Элемент: " + value));
 

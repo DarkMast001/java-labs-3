@@ -62,8 +62,6 @@ public class Main {
     public static void main(String[] args) {
         // 141
 
-        // Ответ на 3 вопрос про примеры
-        // AbstractList, AbstractSet, AbstractMap
 
         Scanner in = new Scanner(System.in);
         int n = 1;
